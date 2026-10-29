@@ -17,7 +17,7 @@ import (
 	"periph.io/x/host/v3"
 )
 
-const AppVersion = "0.11.1" // Turn off Debug logging for production. Change to Error for production. Clean-up code.
+const AppVersion = "1.0.0"
 
 const (
 	SLOW = 1.0
