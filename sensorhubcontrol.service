@@ -1,0 +1,20 @@
+[Unit]
+Description=SensorHub GPIO LED and reset button Controller
+After=local-fs.target
+Before=shutdown.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/hubcontrol
+Restart=on-failure
+RestartSec=2
+KillSignal=SIGTERM
+TimeoutStopSec=10
+
+# GPIO access normally requires root unless the system is configured
+# with suitable GPIO device permissions.
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
